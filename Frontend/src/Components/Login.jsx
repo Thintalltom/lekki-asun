@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import { auth } from "../Firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { FaUserCircle } from "react-icons/fa";
+import { useNavigate } from "react-router";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { Link } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [show, setShow] = useState(false);
+  const[error, setError]=useState('')
   // Sign in with email and password
+  const navigate=useNavigate()
   const loginWithEmailPassword = async () => {
     try {
       const userCredential = await signInWithEmailAndPassword(
@@ -15,9 +20,11 @@ const Login = () => {
         password
       );
       const user = userCredential.user;
+      navigate('/history')
       console.log("User logged in:", user);
     } catch (error) {
       console.error("Error logging in:", error);
+      setError('Invalid email or password')
     }
   };
 
@@ -40,7 +47,7 @@ const Login = () => {
         
           
           <p className="text-center">Login as Admin</p>
-
+    {error && <p className="text-red-600 text-xs text-center mt-[10px]">{error}</p>}
           <div className="flex flex-col items-center p-[20px]">
          
             <input
@@ -66,6 +73,11 @@ const Login = () => {
               Login
             </button>
           </div>
+
+    <Link to='/reset'>
+    <p className="text-xs text-red-500 p-[10px] font-extralight">Reset Password?</p>
+    </Link>
+          
         </div>
       </div>
     </div>

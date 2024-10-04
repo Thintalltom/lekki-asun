@@ -36,8 +36,8 @@ const Products = () => {
         <button
           className={
             activeTab === "products"
-              ? " bg-slate-800 w-[10%] p-[5px] text-white rounded border-[0.5px]"
-              : ""
+              ? " bg-slate-800 w-[10%] p-[5px] text-sm font-extralight text-white rounded border-[0.5px]"
+              : "text-sm font-extralight"
           }
           onClick={() => handleTabClick("products")}
         >
@@ -46,29 +46,29 @@ const Products = () => {
         <button
           className={
             activeTab === "sales"
-              ? " bg-slate-800 w-[10%] p-[5px] text-white rounded border-[0.5px]"
-              : ""
+              ? " bg-slate-800 w-[10%] p-[5px] text-sm font-extralight text-white rounded border-[0.5px]"
+              : "text-sm font-extralight"
           }
           onClick={() => handleTabClick("sales")}
         >
           Sales
         </button>
-        <button
+        {/* <button
           className={
             activeTab === "history"
-              ? "w-[10%] p-[5px] rounded border-[0.5px] text-white bg-slate-800"
-              : ""
+              ? "w-[10%] p-[5px] rounded border-[0.5px] text-sm font-extralight text-white bg-slate-800"
+              : "text-sm font-extralight"
           }
           onClick={() => handleTabClick("history")}
         >
           History
-        </button>
+        </button> */}
       </div>
 
       <div className="flex justify-around mt-[20px]">
         {activeTab === "products" && <Cotent />}
         {activeTab === "sales" && <Sales products={products}  setProducts={setProducts}/>}
-        {activeTab === "history" && <History />}
+        {/* {activeTab === "history" && <History />} */}
       </div>
     </div>
   );
