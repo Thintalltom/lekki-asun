@@ -1,0 +1,24 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+  'skFf1LG6k8CV2U3lMYL5e1rz0nhIhWVbALxZA0TRkHi4kGgjUqc0VH4rF0HXNQ5mnyXwQYWZJXkVnjrW544NZYtWxGd7tpGix6k81GB9XBCMdCEPY8urbQH033HMd6yNk5f7hEEvdNyIhpE3VI3fuPUY7my9aXXiDCJHOid0PbLE2TQ6uOgM'
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
